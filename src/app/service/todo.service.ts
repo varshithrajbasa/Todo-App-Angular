@@ -21,7 +21,6 @@ export class TodoService {
   getTodos(){
     this.todos = JSON.parse(localStorage.getItem('todos'))
     return of(this.todos)
-    // return of(JSON.parse(localStorage.getItem('todos')));
   }
   addTodos(todo: Todo){
     this.todos.push(todo);
