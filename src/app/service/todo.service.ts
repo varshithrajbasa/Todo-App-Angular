@@ -1,0 +1,45 @@
+import { Injectable } from '@angular/core';
+import { of } from 'rxjs';
+import { Todo } from "../model/todo";
+@Injectable({
+  providedIn: 'root'
+})
+export class TodoService {
+  todos: Todo[];
+  constructor() { 
+    this.todos = [
+      {
+        id: '111',
+        isComplete: false,
+        date: new Date(),
+        title: 'Hello There, Feel Free to Use Our Todo App'
+      }
+    ]
+    if(!localStorage.getItem('todos'))
+    localStorage.setItem('todos',JSON.stringify(this.todos));
+  }
+  getTodos(){
+    this.todos = JSON.parse(localStorage.getItem('todos'))
+    return of(this.todos)
+    // return of(JSON.parse(localStorage.getItem('todos')));
+  }
+  addTodos(todo: Todo){
+    this.todos.push(todo);
+    localStorage.setItem('todos',JSON.stringify(this.todos));
+  }
+  changeStatus(todo: Todo){
+    this.todos.map(singleTodo => {
+      if(singleTodo.id == todo.id){
+        todo.isComplete = !todo.isComplete;
+      }
+    });
+    localStorage.setItem('todos',JSON.stringify(this.todos));
+  }
+  deleteTodo(todo:Todo){
+    const indexofTodo = this.todos.findIndex(
+      (currentObj) => currentObj.id === todo.id
+    );
+    this.todos.splice(indexofTodo, 1);
+    localStorage.setItem('todos',JSON.stringify(this.todos));
+  }
+}
