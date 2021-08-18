@@ -10,11 +10,17 @@ import { TodoService } from './../../service/todo.service';
 })
 export class TodoFormComponent implements OnInit {
 todoTitle: string;
+isEmpty:Boolean = false;
   constructor(private todoService:TodoService) { }
 
   ngOnInit(): void {
   }
   handleAdd(){
+    if(!this.todoTitle){
+      this.isEmpty = true;
+      return;
+    }
+    this.isEmpty = false;
     const newTodo: Todo = {
       id : uuidv4(),
       title: this.todoTitle,
