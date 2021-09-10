@@ -1,4 +1,4 @@
 <div class="input-group mb-3 w-100">
-    <input type="text" [ngClass]="{'alert-danger':isEmpty}" placeholder="Enter a todo" name="todo" class="form-control raj-border" [(ngModel)]='todoTitle'>
-    <button (click)="handleAdd()" class="btn btn-raj raj-border">Add Todo</button>
+    <input type="text" (keyup.enter)="handleAdd()" [ngClass]="{'alert-danger':isEmpty}" placeholder="Enter a todo" name="todo" class="form-control raj-border" [(ngModel)]='todoTitle'>
+    <button (click)="handleAdd()"  class="btn btn-raj raj-border">Add Todo</button>
 </div>
