@@ -1,3 +1,7 @@
+<button class="m-3 ml-1 btn btn-raj raj-border inactive-button" (click)="showFilteredData(1)" [ngClass]="{'active': activeButtons.in_complete }">In Completed</button>
+<button class="m-3 ml-1 btn btn-raj raj-border inactive-button" (click)="showFilteredData(0)" [ngClass]="{'active': activeButtons.completed }">Completed</button>
+<button class="m-3 ml-1 btn btn-raj raj-border inactive-button" (click)="showFilteredData(2)" [ngClass]="{'active': activeButtons.show_all }">Show All</button>
+
 <ul class="list-group w-100 " *ngFor="let todo of todos">
     <li class="list-group-item d-flex justify-content-between w-100 raj-border">
         <span>
