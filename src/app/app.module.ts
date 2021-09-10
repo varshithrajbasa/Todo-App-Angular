@@ -8,6 +8,8 @@ import { AppComponent } from './app.component';
 import { TodosComponent } from './components/todos/todos.component';
 import { TodoFormComponent } from './components/todo-form/todo-form.component';
 import { HeaderComponent } from './layout/header/header.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,8 @@ import { HeaderComponent } from './layout/header/header.component';
   imports: [
     BrowserModule,
     FontAwesomeModule,
-    FormsModule
+    FormsModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [],
   bootstrap: [AppComponent]
