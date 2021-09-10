@@ -23,7 +23,7 @@ export class TodoService {
     return of(this.todos)
   }
   addTodos(todo: Todo){
-    this.todos.push(todo);
+    this.todos.unshift(todo);
     localStorage.setItem('todos',JSON.stringify(this.todos));
   }
   changeStatus(todo: Todo){
