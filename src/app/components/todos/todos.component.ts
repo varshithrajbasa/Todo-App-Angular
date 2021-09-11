@@ -16,7 +16,7 @@ export class TodosComponent implements OnInit, OnDestroy {
   todos: Todo[];
   tempTodos: Todo[];
   activeButtons = {
-    in_complete: false,
+    in_complete: true,
     completed: false,
     show_all: false,
   };
@@ -26,9 +26,15 @@ export class TodosComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.todoService.$todos.pipe(takeUntil(this.$onDestroySubject)).subscribe({
       next: (todos) => {
-        this.tempTodos = todos;
-        this.todos = this.tempTodos.filter((ele) => !ele.isComplete);
-        this.setActiveButton(true, false, false);
+        this.tempTodos = this.todos = todos;
+        console.log(todos);
+        if (this.activeButtons.completed) {
+          this.showFilteredData(0);
+        } else if (this.activeButtons.in_complete) {
+          this.showFilteredData(1);
+        } else if (this.activeButtons.show_all) {
+          this.showFilteredData(2);
+        }
       },
     });
   }
@@ -42,6 +48,12 @@ export class TodosComponent implements OnInit, OnDestroy {
   }
 
   showFilteredData(type: number) {
+    if (type === 2) {
+      // show all
+      this.todos = this.tempTodos;
+      this.setActiveButton(false, false, true);
+      return;
+    }
     if (type === 1) {
       //incompleted
       this.todos = this.tempTodos.filter((ele) => !ele.isComplete);
@@ -50,10 +62,6 @@ export class TodosComponent implements OnInit, OnDestroy {
       //completed
       this.todos = this.tempTodos.filter((ele) => ele.isComplete);
       this.setActiveButton(false, true, false);
-    } else {
-      // show all
-      this.todos = this.tempTodos;
-      this.setActiveButton(false, false, true);
     }
   }
 
