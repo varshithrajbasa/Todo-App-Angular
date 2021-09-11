@@ -14,10 +14,13 @@ export class TodoService {
         isComplete: false,
         date: new Date(),
         title: 'Hello There, Feel Free to Use Our Todo App',
-      },
+      }
     ];
     if (!localStorage.getItem('todos'))
       localStorage.setItem('todos', JSON.stringify(this.todos));
+      this.updateTodos();
+  }
+  updateTodos() {
     this.todos = JSON.parse(localStorage.getItem('todos'));
     this.$todos.next(this.todos);
   }
@@ -27,8 +30,8 @@ export class TodoService {
   }
   addTodos(todo: Todo) {
     this.todos.unshift(todo);
-    this.$todos.next(this.todos);
     localStorage.setItem('todos', JSON.stringify(this.todos));
+    this.updateTodos();
   }
   changeStatus(todo: Todo) {
     this.todos.map((singleTodo) => {
@@ -36,17 +39,15 @@ export class TodoService {
         todo.isComplete = !todo.isComplete;
       }
     });
-    this.$todos.next(this.todos);
-
     localStorage.setItem('todos', JSON.stringify(this.todos));
+    this.updateTodos();
   }
   deleteTodo(todo: Todo) {
     const indexofTodo = this.todos.findIndex(
       (currentObj) => currentObj.id === todo.id
     );
     this.todos.splice(indexofTodo, 1);
-    this.$todos.next(this.todos);
-
     localStorage.setItem('todos', JSON.stringify(this.todos));
+    this.updateTodos();
   }
 }
