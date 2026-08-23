@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1787499740247,
+  "timestamp": 1787506510835,
   "index": "/Todo-App-Angular/index.html",
   "assetGroups": [
     {
@@ -13,11 +13,11 @@
       "urls": [
         "/Todo-App-Angular/favicon.ico",
         "/Todo-App-Angular/index.html",
-        "/Todo-App-Angular/main.5b1325292ec6a46133a8.js",
+        "/Todo-App-Angular/main.1ad9e1b1d60b0c879ebb.js",
         "/Todo-App-Angular/manifest.webmanifest",
         "/Todo-App-Angular/polyfills.a4021de53358bb0fec14.js",
         "/Todo-App-Angular/runtime.e227d1a0e31cbccbf8ec.js",
-        "/Todo-App-Angular/styles.93a447abf07ecf729dbc.css"
+        "/Todo-App-Angular/styles.d353ab179ca8323e3d3d.css"
       ],
       "patterns": []
     },
@@ -52,12 +52,12 @@
     "/Todo-App-Angular/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
     "/Todo-App-Angular/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
     "/Todo-App-Angular/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
-    "/Todo-App-Angular/index.html": "a6222e9bf4dfea8527363ba27eb63758db7d2631",
-    "/Todo-App-Angular/main.5b1325292ec6a46133a8.js": "721a4015a7cf922084d54f733507b4cb605dcc8e",
+    "/Todo-App-Angular/index.html": "01fedd5506781b873b94e2ee3aa12f0c3d6f4a16",
+    "/Todo-App-Angular/main.1ad9e1b1d60b0c879ebb.js": "3371a152f2739cb03e1fc135fb86b2b7c03add22",
     "/Todo-App-Angular/manifest.webmanifest": "633297656f04a99a81aaa2993c67fe8796d84228",
     "/Todo-App-Angular/polyfills.a4021de53358bb0fec14.js": "b47435a9ef2a4829f2f9dfd35599bde3614981b1",
     "/Todo-App-Angular/runtime.e227d1a0e31cbccbf8ec.js": "a9aafcf49f49145093fc831efd9b8e2f6c71bb9c",
-    "/Todo-App-Angular/styles.93a447abf07ecf729dbc.css": "060d78832f93c3ad29f9a9d80a97922e91aaa5b6"
+    "/Todo-App-Angular/styles.d353ab179ca8323e3d3d.css": "c1e59acdbeec6a964f94a0b306d3846f6d6ea5e1"
   },
   "navigationUrls": [
     {
