@@ -5,7 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "start-pwa": "ng build --prod && http-server -p 8080 -c-1 dist/todo",
-    "build-todo": "ng build --prod --base-href /Todo-App-Angular/"
+    "build-todo": "ng build --prod --base-href /Todo-App-Angular/",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
