@@ -9,17 +9,40 @@
 
 body {
     position: relative;
-    background-color: #130f41;
+    background-color: var(--body-bg);
+    transition: background-color 0.4s ease-in-out, color 0.4s ease-in-out; 
 }
 .btn-raj{
     color:white;
     margin: 0 0 0 0.25rem;
-    background-color: #957bf0;
-    background-image: linear-gradient(135deg,#957bf0,#fb69d6);
+    background-image: var(--btn-grad);
 }
 .raj-border{
     border-radius: 0.5rem !important;
 }
 .inactive-button{
     opacity: 0.7;
+}
+
+:root, body[data-theme='light'] {
+  --body-bg: #f8f9fc;
+  --header-bg: #ffffff;
+  --header-shadow: 0 4px 20px 0 rgba(149, 123, 240, 0.08);
+  --text-color: #1e293b;
+  
+  --btn-grad: linear-gradient(135deg, #8b5cf6, #ec4899);
+  --btn-active-grad: linear-gradient(135deg, #ec4899, #f43f5e);
+  --btn-active-shadow: 0 6px 20px 0 rgba(236, 72, 153, 0.4);
+}
+
+/* --- Dark Theme ("Neon Midnight") --- */
+body[data-theme='dark'] {
+  --body-bg: #0b0826;
+  --header-bg: #161245;
+  --header-shadow: 0 4px 20px 0 rgba(149, 123, 240, 0.15);
+  --text-color: #f1f5f9;
+  
+  --btn-grad: linear-gradient(135deg, #7c5dfa, #ec4899);
+  --btn-active-grad: linear-gradient(135deg, #ec4899, #f43f5e);
+  --btn-active-shadow: 0 0 20px 0 rgba(236, 72, 153, 0.5);
 }

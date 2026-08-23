@@ -7,9 +7,8 @@ ul {
     margin: 4px 0;
 }
 .active{
-    background-color: #957bf0;
-    background-image: none;
-    box-shadow: 4px 4px 12px 4px #fb69d6;
+    background-image: var(--btn-active-grad);
+    box-shadow: 4px 4px 12px 4px var(--btn-active-shadow);
     opacity: 1;
 }
 .delete{

@@ -1,8 +1,60 @@
-nav{
-    padding:0.5rem 2rem;
-    margin: 1rem;
-    border-radius: 1rem;
-    font-weight: 600;
-    box-shadow: 2px 2px 10px 0 #957bf0;
-    background-color: #20205f;
+nav {
+  padding: 0.5rem 2rem;
+  margin: 1rem;
+  border-radius: 1rem;
+  font-weight: 600;
+  box-shadow: 2px 2px 10px 0 var(--header-shadow);
+  background-color: var(--header-bg);
+  span {
+    color: var(--text-color) !important;
+  }
+  .theme-toggle-label {
+    margin-top: 0.5rem;
+  }
+  .theme-toggle-input {
+    display: none;
+  }
+
+  .theme-toggle-track {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 20px;
+    height: 20px;
+    padding: 0 6px;
+    background-color: var(--toggle-track-bg);
+    border-radius: 999px;
+    cursor: pointer;
+    user-select: none;
+    transition: background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .theme-toggle-track .icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0; 
+    z-index: 1; 
+  }
+
+  .theme-toggle-track .icon svg {
+    width: 100%;
+    height: 100%;
+    color: var(--toggle-icon-color);
+    transition: color 0.3s ease;
+  }
+  .theme-toggle-input:not(:checked) + .theme-toggle-track .moon-icon {
+  display: none;
+}
+
+.theme-toggle-input:checked + .theme-toggle-track .sun-icon {
+  display: none;
+}
+
+.theme-toggle-track .icon {
+  transition: opacity 0.3s ease;
+}
 }
